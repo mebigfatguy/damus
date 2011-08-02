@@ -2,17 +2,17 @@
  * damus - a forecasting tool
  * Copyright (C) 2010 Dave Brosius
  * 
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  * 
- *    http://www.apache.org/licenses/LICENSE-2.0 
- *    
- * Unless required by applicable law or agreed to in writing, 
- * software distributed under the License is distributed on an "AS IS" BASIS, 
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and limitations 
- * under the License. 
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and limitations
+ * under the License.
  */
 package com.mebigfatguy.damus.gui.actions;
 
@@ -29,20 +29,21 @@ import com.mebigfatguy.damus.io.DamusIO;
 
 public class SaveAction extends AbstractAction {
 
-	private static final long serialVersionUID = -3045280940381278424L;
+    private static final long serialVersionUID = -3045280940381278424L;
 
-	public SaveAction() {
-		super(DamusBundle.getString(DamusBundle.SAVE));
-	}
-	
-	public void actionPerformed(ActionEvent e) {
-		File f = null;
-		try {
-			f = DamusIO.saveFile();
-		} catch (IOException ioe) {
-			
-			String msg = MessageFormat.format(DamusBundle.getString(DamusBundle.DAMUS_SAVE_FAILURE), f);
-			JOptionPane.showMessageDialog(null, msg);
-		}
-	}
+    public SaveAction() {
+        super(DamusBundle.getString(DamusBundle.SAVE));
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        File f = null;
+        try {
+            f = DamusIO.saveFile();
+        } catch (IOException ioe) {
+
+            String msg = MessageFormat.format(DamusBundle.getString(DamusBundle.DAMUS_SAVE_FAILURE), f);
+            JOptionPane.showMessageDialog(null, msg);
+        }
+    }
 }
