@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Damus - a prediction tool</title>
+		<meta name="Keywords" content="sourceforge prediction">
+		<script src="mbfg.js">
+		</script>
+		<link rel="stylesheet" type="text/css" href="mbfg.css" />
+	</head>
+	<body background>
+		<div style="position:absolute;top:0;left:0;width:256;height:65535;z-index:1;background-image:url(blend.jpg);">
+		</div>
+		<div style="position:absolute;top:20;left:20;z-index:3;">
+			<h1>Damus</h1>
+			<hr/>
+			<a href="http://www.sourceforge.net/projects/damus">Project Page</a>
+			<img src="vbar.gif" height="12"/>
+			<a href="javadoc/index.html">JavaDoc</a>
+			<img src="vbar.gif" height="12"/>
+			<a href="jnlp/damus.jnlp">Web Start</a>
+			<!--#include virtual="mbfg_menu.shtml" --> 
+			<hr/>
+	
+			<p>Thanks for your interest in Damus.</p>
+			
+			<p>This simple gui webstart tool is a prediction tool. It is just getting started.
+		</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-249537-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</body>
+</html>
