@@ -26,6 +26,7 @@ import javax.swing.JOptionPane;
 
 import com.mebigfatguy.damus.bundle.DamusBundle;
 import com.mebigfatguy.damus.io.DamusIO;
+import com.mebigfatguy.damus.main.Context;
 
 public class SaveAction extends AbstractAction {
 
@@ -37,12 +38,11 @@ public class SaveAction extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        File f = null;
         try {
-            f = DamusIO.saveFile();
+            DamusIO.saveFile();
         } catch (IOException ioe) {
-
-            String msg = MessageFormat.format(DamusBundle.getString(DamusBundle.DAMUS_SAVE_FAILURE), f);
+            File targetFile = Context.instance().getFile();
+            String msg = MessageFormat.format(DamusBundle.getString(DamusBundle.DAMUS_SAVE_FAILURE), (targetFile != null) ? targetFile.getPath() : null);
             JOptionPane.showMessageDialog(null, msg);
         }
     }
