@@ -46,12 +46,7 @@ public class TrainingPanel extends JPanel {
 
     private final PanelViewer panelViewer;
     private final boolean isNew;
-    private JTable trainingTable;
-    private JTable resultsTable;
     private JTextField descriptionField;
-    private JButton cancelButton;
-    private JButton addAndNextButton;
-    private JButton addAndFinishButton;
 
     public TrainingPanel(PanelViewer viewer, boolean isNewItem) {
         panelViewer = viewer;
@@ -112,7 +107,7 @@ public class TrainingPanel extends JPanel {
         {
             JPanel metricsPanel = new JPanel();
             metricsPanel.setLayout(new BorderLayout(4, 4));
-            trainingTable = new JTable(new TrainingTableModel(ForecastDataType.Metric));
+            JTable trainingTable = new JTable(new TrainingTableModel(ForecastDataType.Metric));
             trainingTable.setRowHeight(trainingTable.getRowHeight() + 14);
             TableColumn column = trainingTable.getColumnModel().getColumn(1);
             column.setCellRenderer(new TrainingValueCellRenderer(ForecastDataType.Metric));
@@ -125,7 +120,7 @@ public class TrainingPanel extends JPanel {
         {
             JPanel resultsPanel = new JPanel();
             resultsPanel.setLayout(new BorderLayout(4, 4));
-            resultsTable = new JTable(new TrainingTableModel(ForecastDataType.Result));
+            JTable resultsTable = new JTable(new TrainingTableModel(ForecastDataType.Result));
             resultsTable.setRowHeight(resultsTable.getRowHeight() + 14);
             TableColumn column = resultsTable.getColumnModel().getColumn(1);
             column.setCellRenderer(new TrainingValueCellRenderer(ForecastDataType.Result));
@@ -142,9 +137,9 @@ public class TrainingPanel extends JPanel {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
-        cancelButton = new JButton(new CancelTrainingAction(panelViewer));
-        addAndNextButton = new JButton(new AddTrainingAndNextAction(panelViewer, this));
-        addAndFinishButton = new JButton(new AddTrainingAndFinishAction(panelViewer, this));
+        JButton cancelButton = new JButton(new CancelTrainingAction(panelViewer));
+        JButton addAndNextButton = new JButton(new AddTrainingAndNextAction(panelViewer, this));
+        JButton addAndFinishButton = new JButton(new AddTrainingAndFinishAction(panelViewer, this));
 
         GUIUtils.sizeUniformly(cancelButton, addAndNextButton, addAndFinishButton);
 

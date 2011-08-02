@@ -45,9 +45,6 @@ public class PredictionPanel extends JPanel {
     private static final long serialVersionUID = -5723506056156479994L;
     private final PanelViewer panelViewer;
     private JTextField descriptionField;
-    private JTable predictionTable;
-    private JTable resultsTable;
-    private JButton closeButton;
     private final TrainingItem trainingItem = new TrainingItem();
     private PredictionTableModel resultsModel;
 
@@ -92,7 +89,7 @@ public class PredictionPanel extends JPanel {
         {
             JPanel metricsPanel = new JPanel();
             metricsPanel.setLayout(new BorderLayout(4, 4));
-            predictionTable = new JTable(new PredictionTableModel(ForecastDataType.Metric, trainingItem));
+            JTable predictionTable = new JTable(new PredictionTableModel(ForecastDataType.Metric, trainingItem));
             predictionTable.setRowHeight(predictionTable.getRowHeight() + 14);
             TableColumn column = predictionTable.getColumnModel().getColumn(1);
             column.setCellRenderer(new TrainingValueCellRenderer(ForecastDataType.Metric));
@@ -119,7 +116,7 @@ public class PredictionPanel extends JPanel {
             JPanel resultsPanel = new JPanel();
             resultsPanel.setLayout(new BorderLayout(4, 4));
             resultsModel = new PredictionTableModel(ForecastDataType.Result, trainingItem);
-            resultsTable = new JTable(resultsModel);
+            JTable resultsTable = new JTable(resultsModel);
             resultsTable.setRowHeight(resultsTable.getRowHeight() + 14);
             TableColumn column = resultsTable.getColumnModel().getColumn(1);
             column.setCellRenderer(new TrainingValueCellRenderer(ForecastDataType.Result));
@@ -136,7 +133,7 @@ public class PredictionPanel extends JPanel {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
-        closeButton = new JButton(new ClosePredictionAction(panelViewer));
+        JButton closeButton = new JButton(new ClosePredictionAction(panelViewer));
 
         panel.add(Box.createHorizontalGlue());
         panel.add(closeButton);
