@@ -155,9 +155,9 @@ public class TrainingValueCellEditor implements TableCellEditor {
             case Real:
                 String realText = realValue.getText().trim();
                 if (realText.length() == 0) {
-                    return Double.valueOf(0);
+                    return new BigDecimal("0");
                 } else {
-                    return Double.valueOf(realValue.getText());
+                    return new BigDecimal(realValue.getText());
                 }
 
             case YesNo:
