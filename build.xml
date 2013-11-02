@@ -102,6 +102,9 @@
 			<manifest>
 				<attribute name="damus-version" value="${damus.version}" />
 				<attribute name="Main-Class" value="com.mebigfatguy.damus.main.PatchMain" />
+                <attribute name="Application-Name" value="Damus" />
+                <attribute name="Permissions" value="all-permissions" />
+                <attribute name="Codebase" value="*" />
 				<attribute name="Class-Path" value="xml-apis.jar xalan.jar xercesImpl.jar serializer.jar" />
 			</manifest>
 		</jar>
