@@ -1,8 +1,0 @@
-[Jar files]
-./classes
-[Source dirs]
-./src
-[Aux classpath entries]
-./lib/commons-math-2.2.jar
-[Options]
-relative_paths=true
