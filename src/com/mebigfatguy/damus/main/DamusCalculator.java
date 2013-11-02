@@ -18,7 +18,7 @@ package com.mebigfatguy.damus.main;
 
 import java.math.BigDecimal;
 
-import org.apache.commons.math.stat.regression.OLSMultipleLinearRegression;
+import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 
 import com.mebigfatguy.damus.data.Metric;
 import com.mebigfatguy.damus.data.PredictionModel;
